@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/src/material/colors.dart';
 
 void main() {
   return runApp(MySimpleLogin());
@@ -19,29 +20,29 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.indigo,
         fontFamily: 'Domine',
       ),
       home: Scaffold(
-        appBar: AppBar(title: const Text("My Simple Login")),
+        appBar: AppBar(title: const Text("Mo-Minjam")),
         body: Center(
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  margin: const EdgeInsets.only(bottom: 40),
+                  margin: const EdgeInsets.only(bottom: 1),
                   child: Image.asset(
-                    'assets/images/Lambang_ITK.png',
-                    width: 150,
-                    height: 150,
+                    'assets/images/logo.png',
+                    width: 250,
+                    height: 250,
                   ),
                 ),
                 Container(
                   width: double.infinity,
                   margin: const EdgeInsets.symmetric(
-                    vertical: 12,
-                    horizontal: 20,
+                    vertical: 20,
+                    horizontal: 165,
                   ),
                   child: const Text(
                     "Login",
@@ -53,7 +54,8 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.only(
+                      left: 20, right: 20, top: 1, bottom: 1),
                   width: double.infinity,
                   child: TextFormField(
                     decoration: const InputDecoration(
@@ -80,6 +82,22 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
                     onChanged: (value) => setState(() => password = value),
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: true,
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  margin: const EdgeInsets.symmetric(
+                    vertical: 1,
+                    horizontal: 115,
+                  ),
+                  child: const Text(
+                    "Belum punya akun?",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      fontFamily: 'Headline',
+                      color: Colors.indigo,
+                    ),
                   ),
                 ),
                 Container(
