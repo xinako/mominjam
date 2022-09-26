@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mominjam/Screen/home_screen/home_screen.dart';
 
-import 'home_screen.dart';
+import 'Screen/home_screen/home_screen.dart';
+import 'Screen/login/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,8 +14,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
-    );
+        debugShowCheckedModeBanner: false,
+        // home: MySimpleLogin(),
+        home: HomeScreen());
   }
 }
