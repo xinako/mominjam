@@ -159,7 +159,7 @@ class _MyRegisterState extends State<MyRegister> {
                   width: double.infinity,
                   margin: const EdgeInsets.symmetric(
                     vertical: 1,
-                    horizontal: 115,
+                    horizontal: 105,
                   ),
                   child: RichText(
                     text: TextSpan(children: [
