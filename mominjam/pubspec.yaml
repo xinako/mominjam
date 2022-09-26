@@ -51,7 +51,7 @@ dev_dependencies:
 
 flutter_icons:
   android: true
-  image_path: assets/images/mominjam.png
+  image_path: assets/images/logoo.png
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
