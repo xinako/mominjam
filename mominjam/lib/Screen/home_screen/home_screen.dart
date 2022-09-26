@@ -15,8 +15,11 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
+enum SingingCharacter { lafayette, jefferson }
+
 class _HomeScreenState extends State<HomeScreen> {
   int pinjaman = 0;
+  SingingCharacter? _character = SingingCharacter.lafayette;
   // int totpinjam = pinjaman * 2;
   // int pinjam = 0;
 
@@ -30,7 +33,10 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       home: Scaffold(
         backgroundColor: Color.fromARGB(199, 255, 255, 255),
-        appBar: AppBar(title: const Text("Mo-Minjam")),
+        appBar: AppBar(
+          title: const Text("Mo-Minjam"),
+          centerTitle: true,
+        ),
         body: Center(
           child: SingleChildScrollView(
             child: Column(
@@ -103,6 +109,36 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
+                // Container(
+                //   child: Row(
+                //     children: <Widget>[
+                //       ListTile(
+                //         title: const Text('Lafayette'),
+                //         leading: Radio<SingingCharacter>(
+                //           value: SingingCharacter.lafayette,
+                //           groupValue: _character,
+                //           onChanged: (SingingCharacter? value) {
+                //             setState(() {
+                //               _character = value;
+                //             });
+                //           },
+                //         ),
+                //       ),
+                //       ListTile(
+                //         title: const Text('Thomas Jefferson'),
+                //         leading: Radio<SingingCharacter>(
+                //           value: SingingCharacter.lafayette,
+                //           groupValue: _character,
+                //           onChanged: (SingingCharacter? value) {
+                //             setState(() {
+                //               _character = value;
+                //             });
+                //           },
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
                 Container(
                   width: double.infinity,
                   margin: const EdgeInsets.symmetric(

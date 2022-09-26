@@ -31,7 +31,10 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
         fontFamily: 'Domine',
       ),
       home: Scaffold(
-        appBar: AppBar(title: const Text("Mo-Minjam")),
+        appBar: AppBar(
+          title: const Text("Mo-Minjam"),
+          centerTitle: true,
+        ),
         body: Center(
           child: SingleChildScrollView(
             child: Column(
