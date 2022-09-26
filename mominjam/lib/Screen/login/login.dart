@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/material/colors.dart';
+// import '../../main.dart';
+// import '../register/';
+import '../home_screen/home_screen.dart';
 
 void main() {
   return runApp(MySimpleLogin());
@@ -25,7 +28,7 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
         fontFamily: 'Domine',
       ),
       home: Scaffold(
-        appBar: AppBar(title: const Text("Mo-Minjam")),
+        // appBar: AppBar(title: const Text("Mo-Minjam")),
         body: Center(
           child: SingleChildScrollView(
             child: Column(
@@ -128,17 +131,21 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(snackBar);
                           } else {
-                            final message =
-                                'Email: $email\nPassword: $password';
-                            final snackBar = SnackBar(
-                              content: Text(
-                                message,
-                                style: const TextStyle(fontSize: 20),
-                              ),
-                              backgroundColor: Colors.green,
-                            );
-                            ScaffoldMessenger.of(context)
-                                .showSnackBar(snackBar);
+                            Navigator.of(context)
+                                .push(MaterialPageRoute(builder: (context) {
+                              return HomeScreen();
+                            }));
+                            // final message =
+                            //     'Email: $email\nPassword: $password';
+                            // final snackBar = SnackBar(
+                            //   content: Text(
+                            //     message,
+                            //     style: const TextStyle(fontSize: 20),
+                            //   ),
+                            //   backgroundColor: Colors.green,
+                            // );
+                            // ScaffoldMessenger.of(context)
+                            //     .showSnackBar(snackBar);
                           }
                         },
                         child: const Text(
