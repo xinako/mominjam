@@ -52,7 +52,7 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
                   width: double.infinity,
                   margin: const EdgeInsets.symmetric(
                     vertical: 20,
-                    horizontal: 165,
+                    horizontal: 140,
                   ),
                   child: const Text(
                     "Login",

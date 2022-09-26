@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
         fontFamily: 'Domine',
       ),
       home: Scaffold(
-        backgroundColor: Color.fromARGB(199, 255, 255, 255),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
         appBar: AppBar(
           title: const Text("Mo-Minjam"),
           centerTitle: true,
@@ -80,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 // ),
                 Container(
                   width: double.infinity,
-                  margin: EdgeInsets.only(bottom: 1, left: 75, top: 150),
+                  margin: EdgeInsets.only(bottom: 1, left: 50, top: 150),
                   child: const Text(
                     "Limit Pinjaman Anda :",
                     style: TextStyle(
@@ -95,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   width: double.infinity,
                   margin: const EdgeInsets.symmetric(
                     vertical: 10,
-                    horizontal: 90,
+                    horizontal: 40,
                   ),
                   // margin: const EdgeInsets.only(
                   //     left: 20, right: 20, top: 1, bottom: 1),
@@ -105,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontWeight: FontWeight.bold,
                       fontSize: 25,
                       fontFamily: 'Headline',
-                      color: Colors.yellowAccent,
+                      color: Color.fromARGB(255, 17, 65, 100),
                     ),
                   ),
                 ),
