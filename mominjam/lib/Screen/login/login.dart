@@ -1,5 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/material/colors.dart';
+import 'package:flutter/gestures.dart';
+import '../register/register.dart';
 // import '../../main.dart';
 // import '../register/';
 import '../home_screen/home_screen.dart';
@@ -94,14 +97,21 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
                     vertical: 1,
                     horizontal: 115,
                   ),
-                  child: const Text(
-                    "Belum punya akun?",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      fontFamily: 'Headline',
-                      color: Colors.indigo,
-                    ),
+                  child: RichText(
+                    text: TextSpan(children: [
+                      TextSpan(
+                          text: 'Belum Punya Akun? Register Disini',
+                          style: TextStyle(
+                            color: Colors.blue,
+                          ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.of(context)
+                                  .push(MaterialPageRoute(builder: (context) {
+                                return MyRegister();
+                              }));
+                            }),
+                    ]),
                   ),
                 ),
                 Container(

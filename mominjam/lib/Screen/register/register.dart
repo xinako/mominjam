@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
+import 'package:mominjam/Screen/login/login.dart';
 
 void main() {
-  return runApp(const MySimpleLogin());
+  return runApp(const MyRegister());
 }
 
-class MySimpleLogin extends StatefulWidget {
-  const MySimpleLogin({Key? key}) : super(key: key);
+class MyRegister extends StatefulWidget {
+  const MyRegister({Key? key}) : super(key: key);
 
   @override
-  State<MySimpleLogin> createState() => _MySimpleLoginState();
+  State<MyRegister> createState() => _MyRegisterState();
 }
 
-class _MySimpleLoginState extends State<MySimpleLogin> {
+class _MyRegisterState extends State<MyRegister> {
   var email = "";
   var password = "";
 
@@ -24,8 +26,10 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
         fontFamily: 'Domine',
       ),
       home: Scaffold(
-        appBar: AppBar(title: const Text("Register Mo-Minjam"),
-        centerTitle: true,),
+        appBar: AppBar(
+          title: const Text("Register Mo-Minjam"),
+          centerTitle: true,
+        ),
         body: Center(
           child: SingleChildScrollView(
             child: Column(
@@ -157,14 +161,21 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
                     vertical: 1,
                     horizontal: 115,
                   ),
-                  child: const Text(
-                    "Sudah punya akun?",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      fontFamily: 'Headline',
-                      color: Colors.indigo,
-                    ),
+                  child: RichText(
+                    text: TextSpan(children: [
+                      TextSpan(
+                          text: 'Sudah Punya Akun? Login Disini',
+                          style: TextStyle(
+                            color: Colors.blue,
+                          ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.of(context)
+                                  .push(MaterialPageRoute(builder: (context) {
+                                return MySimpleLogin();
+                              }));
+                            }),
+                    ]),
                   ),
                 ),
                 Container(
@@ -194,8 +205,7 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(snackBar);
                           } else {
-                            const message =
-                                'Akun terdaftarkan';
+                            const message = 'Akun terdaftarkan';
                             const snackBar = SnackBar(
                               content: Text(
                                 message,
