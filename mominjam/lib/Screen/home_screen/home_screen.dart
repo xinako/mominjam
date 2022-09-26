@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       home: Scaffold(
         backgroundColor: Color.fromARGB(199, 255, 255, 255),
-        // appBar: AppBar(title: const Text("Mo-Minjam")),
+        appBar: AppBar(title: const Text("Mo-Minjam")),
         body: Center(
           child: SingleChildScrollView(
             child: Column(
