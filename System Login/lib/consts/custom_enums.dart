@@ -1,2 +1,0 @@
-
-enum Authenticated { authenticated, notAuthenticated }
