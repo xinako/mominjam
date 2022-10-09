@@ -39,6 +39,10 @@ dependencies:
   flutter_launcher_icons: ^0.10.0
   firebase_core: ^1.22.0
   custom_radio_grouped_button: any
+  smooth_star_rating: ^1.1.1
+  percent_indicator: ^2.1.9
+  awesome_card: ^1.1.0
+  im_stepper: ^0.1.2+10
 
 dev_dependencies:
   flutter_test:

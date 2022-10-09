@@ -20,13 +20,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int pinjaman = 0;
+  int tenor = 0;
   // SingingCharacter? _character = SingingCharacter.lafayette;
   // int totpinjam = pinjaman * 2;
   // int pinjam = 0;
 
   @override
   Widget build(BuildContext context) {
-    var tenor = 0;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -197,7 +197,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           FocusScope.of(context).unfocus();
                           if (pinjaman < 400000 ||
                               pinjaman == 0 ||
-                              tenor == 0) {
+                              tenor == 0 ||
+                              pinjaman > 1500000) {
                             const message = 'Masukkan Data Dengan Benar';
                             const snackBar = SnackBar(
                               content: Text(
@@ -249,7 +250,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           FocusScope.of(context).unfocus();
                           if (pinjaman < 400000 ||
                               pinjaman == 0 ||
-                              tenor == 0) {
+                              tenor == 0 ||
+                              pinjaman > 1500000) {
                             const message = 'Masukkan Data Dengan Benar';
                             const snackBar = SnackBar(
                               content: Text(
@@ -261,7 +263,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(snackBar);
                           } else {
-                            final message = 'Total Pembayaran :  $pinjaman)';
+                            final message = 'Total Pembayaran :  $pinjaman';
                             final snackBar = SnackBar(
                               content: Text(
                                 message,
