@@ -1,9 +1,11 @@
 import 'package:custom_radio_grouped_button/custom_radio_grouped_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/src/material/colors.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../succesful_page/successful_page.dart';
 
 void main() {
   return runApp(HomeScreen());
@@ -27,6 +29,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -199,7 +205,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               pinjaman == 0 ||
                               tenor == 0 ||
                               pinjaman > 1500000) {
-                            const message = 'Masukkan Data Dengan Benar';
+                            const message = 'Masukkan Data Dengan Benar!';
                             const snackBar = SnackBar(
                               content: Text(
                                 message,
@@ -252,7 +258,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               pinjaman == 0 ||
                               tenor == 0 ||
                               pinjaman > 1500000) {
-                            const message = 'Masukkan Data Dengan Benar';
+                            const message = 'Masukkan Data Dengan Benar!';
                             const snackBar = SnackBar(
                               content: Text(
                                 message,
@@ -263,16 +269,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(snackBar);
                           } else {
-                            final message = 'Total Pembayaran :  $pinjaman';
-                            final snackBar = SnackBar(
-                              content: Text(
-                                message,
-                                style: const TextStyle(fontSize: 20),
-                              ),
-                              backgroundColor: Colors.green,
-                            );
-                            ScaffoldMessenger.of(context)
-                                .showSnackBar(snackBar);
+                            Navigator.of(context)
+                                .push(MaterialPageRoute(builder: (context) {
+                              return successful_page();
+                            }));
                           }
                         },
                         child: const Text(
