@@ -49,7 +49,7 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
                   ),
                 ),
                 Container(
-                  width: double.infinity,
+                  // width: double.infinity,
                   margin: const EdgeInsets.symmetric(
                     vertical: 20,
                     horizontal: 140,
