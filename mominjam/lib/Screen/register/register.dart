@@ -185,7 +185,7 @@ class _MyRegisterState extends State<MyRegister> {
                 ),
                 Container(
                     height: 55,
-                    width: double.infinity,
+                    // width: double.infinity,
                     margin: const EdgeInsets.symmetric(
                       horizontal: 14,
                       vertical: 28,
