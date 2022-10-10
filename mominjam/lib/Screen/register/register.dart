@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/services.dart';
@@ -220,6 +222,12 @@ class _MyRegisterState extends State<MyRegister> {
                             );
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(snackBar);
+                            Timer(Duration(seconds: 2), () {
+                              Navigator.of(context)
+                                  .push(MaterialPageRoute(builder: (context) {
+                                return MySimpleLogin();
+                              }));
+                            });
                           }
                         },
                         child: const Text(

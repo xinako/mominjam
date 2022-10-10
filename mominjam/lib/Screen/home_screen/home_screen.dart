@@ -6,6 +6,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../succesful_page/successful_page.dart';
+import '../terms/terms.dart';
 
 void main() {
   return runApp(HomeScreen());
@@ -44,6 +45,12 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           title: const Text("Mo-Minjam"),
           centerTitle: true,
+          automaticallyImplyLeading: false,
+          leading: new IconButton(
+            icon: new Icon(Icons.exit_to_app,
+                color: Color.fromARGB(255, 255, 255, 255)),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -189,6 +196,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Container(
                     height: 55,
+
                     // width: double.infinity,
                     margin: const EdgeInsets.symmetric(
                       horizontal: 14,
@@ -272,7 +280,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           } else {
                             Navigator.of(context)
                                 .push(MaterialPageRoute(builder: (context) {
-                              return successful_page();
+                              return Terms();
                             }));
                           }
                         },

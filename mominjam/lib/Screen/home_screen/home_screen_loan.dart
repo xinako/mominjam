@@ -7,6 +7,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 // import '../succesful_page/successful_page.dart';
 import '../payment/payment.dart';
+import '../login/login.dart';
 
 void main() {
   return runApp(HomeScreenLoan());
@@ -45,6 +46,16 @@ class _HomeScreenLoanState extends State<HomeScreenLoan> {
         appBar: AppBar(
           title: const Text("Mo-Minjam"),
           centerTitle: true,
+          automaticallyImplyLeading: false,
+          leading: new IconButton(
+            icon: new Icon(Icons.exit_to_app,
+                color: Color.fromARGB(255, 255, 255, 255)),
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return MySimpleLogin();
+              }));
+            },
+          ),
         ),
         body: Center(
           child: SingleChildScrollView(
