@@ -22,6 +22,10 @@ class _GoPayState extends State<GoPay> {
       ),
       home: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_rounded, color: Colors.white),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
           title: const Text("Mo-Minjam"),
           centerTitle: true,
         ),
@@ -38,6 +42,7 @@ class _GoPayState extends State<GoPay> {
                   ),
                   child: const Text(
                     "Tahapan Pembayaran Menggunakan GoPay : ",
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       // fontStyle: FontStyle.italic,
@@ -132,32 +137,6 @@ class _GoPayState extends State<GoPay> {
                     ),
                   ),
                 ),
-                Container(
-                    height: 55,
-                    // width: double.infinity,
-                    margin: const EdgeInsets.only(right: 285, top: 20),
-                    child: Builder(
-                      builder: (context) => ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(14)),
-                        ),
-                        onPressed: () {
-                          FocusScope.of(context).unfocus();
-                          var tonet = 0;
-                          if (tonet == 0) {
-                            Navigator.of(context)
-                                .push(MaterialPageRoute(builder: (context) {
-                              return Payment();
-                            }));
-                          }
-                        },
-                        child: const Text(
-                          "Kembali",
-                          style: TextStyle(fontSize: 18),
-                        ),
-                      ),
-                    )),
               ],
             ),
           ),

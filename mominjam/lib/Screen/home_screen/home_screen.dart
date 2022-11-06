@@ -6,6 +6,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../succesful_page/successful_page.dart';
+import '../login/login.dart';
 
 void main() {
   return runApp(HomeScreen());
@@ -42,6 +43,15 @@ class _HomeScreenState extends State<HomeScreen> {
       home: Scaffold(
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.logout_rounded, color: Colors.white),
+            onPressed: () => {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) {
+            return MySimpleLogin();
+            }))
+          }
+          ),
           title: const Text("Mo-Minjam"),
           centerTitle: true,
         ),

@@ -103,7 +103,7 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
                   width: double.infinity,
                   margin: const EdgeInsets.symmetric(
                     vertical: 1,
-                    horizontal: 115,
+                    horizontal: 95,
                   ),
                   child: RichText(
                     text: TextSpan(children: [
