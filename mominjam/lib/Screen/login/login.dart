@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/material/colors.dart';
 import 'package:flutter/gestures.dart';
+import 'package:mominjam/main.dart';
 import '../register/register.dart';
 // import '../../main.dart';
 // import '../register/';
@@ -196,8 +197,19 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
   }
 
   Future login() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailcontroller.text.trim(),
-        password: passwordcontroller.text.trim());
+    showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) => Center(child: CircularProgressIndicator()));
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: emailcontroller.text.trim(),
+          password: passwordcontroller.text.trim());
+    } on FirebaseAuthException catch (e) {
+      print(e);
+    }
+    navigatorKey.currentState!.popUntil((route) => route.isFirst);
+    // print(emailcontroller.text.trim());
+    // print(passwordcontroller.text.trim());
   }
 }

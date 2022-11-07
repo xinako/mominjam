@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/services.dart';
@@ -22,6 +23,7 @@ class _ProfileState extends State<Profile> {
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
@@ -63,7 +65,7 @@ class _ProfileState extends State<Profile> {
                   ),
                   width: double.infinity,
                   child: TextFormField(
-                    initialValue: "Bambang Sidoardjo",
+                    initialValue: "Masih Null",
                     enabled: false,
                     decoration: const InputDecoration(
                       labelText: "Nama Lengkap",
@@ -81,7 +83,7 @@ class _ProfileState extends State<Profile> {
                   ),
                   width: double.infinity,
                   child: TextFormField(
-                    initialValue: "6409011901000002",
+                    initialValue: "Masih Null",
                     enabled: false,
                     decoration: const InputDecoration(
                       labelText: "NIK",
@@ -104,7 +106,7 @@ class _ProfileState extends State<Profile> {
                       prefixIcon: Icon(Icons.phone),
                       border: OutlineInputBorder(),
                     ),
-                    initialValue: "082112312323",
+                    initialValue: "Masih Null",
                     onChanged: (value) => setState(() => email = value),
                     keyboardType: TextInputType.phone,
                   ),
@@ -116,7 +118,7 @@ class _ProfileState extends State<Profile> {
                   ),
                   width: double.infinity,
                   child: TextFormField(
-                    initialValue: "123103581347123",
+                    initialValue: "Masih Null",
                     decoration: const InputDecoration(
                       labelText: "Nomor Rekening",
                       prefixIcon: Icon(Icons.account_balance),
@@ -133,8 +135,9 @@ class _ProfileState extends State<Profile> {
                   ),
                   width: double.infinity,
                   child: TextFormField(
-                    initialValue: 'bambang@gmail.com',
+                    initialValue: user.email!,
                     decoration: const InputDecoration(
+                      enabled: false,
                       labelText: "Email",
                       prefixIcon: Icon(Icons.email),
                       border: OutlineInputBorder(),
@@ -144,40 +147,7 @@ class _ProfileState extends State<Profile> {
                     keyboardType: TextInputType.emailAddress,
                   ),
                 ),
-                Container(
-                  margin: const EdgeInsets.symmetric(
-                    vertical: 3,
-                    horizontal: 20,
-                  ),
-                  width: double.infinity,
-                  child: TextFormField(
-                    initialValue: "asdasdasd",
-                    decoration: const InputDecoration(
-                      labelText: "Password",
-                      prefixIcon: Icon(Icons.password),
-                      border: OutlineInputBorder(),
-                    ),
-                    onChanged: (value) => setState(() => password = value),
-                    keyboardType: TextInputType.visiblePassword,
-                    obscureText: true,
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(
-                      left: 20, right: 20, top: 3, bottom: 11),
-                  width: double.infinity,
-                  child: TextFormField(
-                    initialValue: "asdasdasd",
-                    decoration: const InputDecoration(
-                      labelText: "Konfirmasi Password",
-                      prefixIcon: Icon(Icons.check),
-                      border: OutlineInputBorder(),
-                    ),
-                    onChanged: (value) => setState(() => password = value),
-                    keyboardType: TextInputType.visiblePassword,
-                    obscureText: true,
-                  ),
-                ),
+
                 // Container(
                 //   margin: const EdgeInsets.symmetric(
                 //     vertical: 3,
