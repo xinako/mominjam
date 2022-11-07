@@ -236,22 +236,22 @@ class _MyRegisterState extends State<MyRegister> {
                                 .showSnackBar(snackBar);
                           } else {
                             register();
-                            // const message = 'Akun terdaftarkan';
-                            // const snackBar = SnackBar(
-                            //   content: Text(
-                            //     message,
-                            //     style: TextStyle(fontSize: 20),
-                            //   ),
-                            //   backgroundColor: Colors.green,
-                            // );
-                            // ScaffoldMessenger.of(context)
-                            //     .showSnackBar(snackBar);
-                            // Timer(Duration(seconds: 2), () {
-                            //   Navigator.of(context)
-                            //       .push(MaterialPageRoute(builder: (context) {
-                            //     return MySimpleLogin();
-                            //   }));
-                            // });
+                            const message = 'Akun terdaftarkan';
+                            const snackBar = SnackBar(
+                              content: Text(
+                                message,
+                                style: TextStyle(fontSize: 20),
+                              ),
+                              backgroundColor: Colors.green,
+                            );
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(snackBar);
+                            Timer(Duration(seconds: 2), () {
+                              Navigator.of(context)
+                                  .push(MaterialPageRoute(builder: (context) {
+                                return MySimpleLogin();
+                              }));
+                            });
                           }
                         },
                         child: const Text(

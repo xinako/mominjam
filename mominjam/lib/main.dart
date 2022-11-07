@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:mominjam/Screen/home_screen/home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'Screen/home_screen/home_screen.dart';
 import 'Screen/login/login.dart';
 
 void main() async {
