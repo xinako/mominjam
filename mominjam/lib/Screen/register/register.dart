@@ -1,7 +1,13 @@
+import 'dart:async';
+
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/services.dart';
 import 'package:mominjam/Screen/login/login.dart';
+import '../home_screen/home_screen.dart';
+import '../../main.dart';
 
 void main() {
   return runApp(const MyRegister());
@@ -17,6 +23,17 @@ class MyRegister extends StatefulWidget {
 class _MyRegisterState extends State<MyRegister> {
   var email = "";
   var password = "";
+  var cpassword = "";
+  final emailcontroller = TextEditingController();
+  final passwordcontroller = TextEditingController();
+
+  @override
+  void dispose() {
+    emailcontroller.dispose();
+    passwordcontroller.dispose();
+
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +73,7 @@ class _MyRegisterState extends State<MyRegister> {
                   width: double.infinity,
                   child: TextFormField(
                     decoration: const InputDecoration(
+                      enabled: false,
                       labelText: "Nama Lengkap",
                       prefixIcon: Icon(Icons.person),
                       border: OutlineInputBorder(),
@@ -72,6 +90,7 @@ class _MyRegisterState extends State<MyRegister> {
                   width: double.infinity,
                   child: TextFormField(
                     decoration: const InputDecoration(
+                      enabled: false,
                       labelText: "NIK",
                       prefixIcon: Icon(Icons.account_box),
                       border: OutlineInputBorder(),
@@ -88,6 +107,7 @@ class _MyRegisterState extends State<MyRegister> {
                   width: double.infinity,
                   child: TextFormField(
                     decoration: const InputDecoration(
+                      enabled: false,
                       labelText: "Nomor Telepon",
                       prefixIcon: Icon(Icons.phone),
                       border: OutlineInputBorder(),
@@ -104,6 +124,7 @@ class _MyRegisterState extends State<MyRegister> {
                   width: double.infinity,
                   child: TextFormField(
                     decoration: const InputDecoration(
+                      enabled: false,
                       labelText: "Nomor Rekening",
                       prefixIcon: Icon(Icons.account_balance),
                       border: OutlineInputBorder(),
@@ -119,6 +140,7 @@ class _MyRegisterState extends State<MyRegister> {
                   ),
                   width: double.infinity,
                   child: TextFormField(
+                    controller: emailcontroller,
                     decoration: const InputDecoration(
                       labelText: "Email",
                       prefixIcon: Icon(Icons.email),
@@ -135,6 +157,7 @@ class _MyRegisterState extends State<MyRegister> {
                   ),
                   width: double.infinity,
                   child: TextFormField(
+                    controller: passwordcontroller,
                     decoration: const InputDecoration(
                       labelText: "Password",
                       prefixIcon: Icon(Icons.password),
@@ -155,7 +178,7 @@ class _MyRegisterState extends State<MyRegister> {
                       prefixIcon: Icon(Icons.check),
                       border: OutlineInputBorder(),
                     ),
-                    onChanged: (value) => setState(() => password = value),
+                    onChanged: (value) => setState(() => cpassword = value),
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: true,
                   ),
@@ -185,7 +208,7 @@ class _MyRegisterState extends State<MyRegister> {
                 ),
                 Container(
                     height: 55,
-                    // width: double.infinity,
+                    width: double.infinity,
                     margin: const EdgeInsets.symmetric(
                       horizontal: 14,
                       vertical: 28,
@@ -198,7 +221,9 @@ class _MyRegisterState extends State<MyRegister> {
                         ),
                         onPressed: () {
                           FocusScope.of(context).unfocus();
-                          if (email.isEmpty || password.isEmpty) {
+                          if (email.isEmpty ||
+                              password.isEmpty ||
+                              password != cpassword) {
                             const message = 'Masukkan data dengan benar';
                             const snackBar = SnackBar(
                               content: Text(
@@ -210,16 +235,23 @@ class _MyRegisterState extends State<MyRegister> {
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(snackBar);
                           } else {
-                            const message = 'Akun terdaftarkan';
-                            const snackBar = SnackBar(
-                              content: Text(
-                                message,
-                                style: TextStyle(fontSize: 20),
-                              ),
-                              backgroundColor: Colors.green,
-                            );
-                            ScaffoldMessenger.of(context)
-                                .showSnackBar(snackBar);
+                            register();
+                            // const message = 'Akun terdaftarkan';
+                            // const snackBar = SnackBar(
+                            //   content: Text(
+                            //     message,
+                            //     style: TextStyle(fontSize: 20),
+                            //   ),
+                            //   backgroundColor: Colors.green,
+                            // );
+                            // ScaffoldMessenger.of(context)
+                            //     .showSnackBar(snackBar);
+                            // Timer(Duration(seconds: 2), () {
+                            //   Navigator.of(context)
+                            //       .push(MaterialPageRoute(builder: (context) {
+                            //     return MySimpleLogin();
+                            //   }));
+                            // });
                           }
                         },
                         child: const Text(
@@ -234,5 +266,22 @@ class _MyRegisterState extends State<MyRegister> {
         ),
       ),
     );
+  }
+
+  Future register() async {
+    print(emailcontroller.text.trim());
+    print(passwordcontroller.text.trim());
+    showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) => Center(child: CircularProgressIndicator()));
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: emailcontroller.text.trim(),
+          password: passwordcontroller.text.trim());
+    } on FirebaseAuthException catch (e) {
+      print(e);
+    }
+    navigatorKey.currentState!.popUntil((route) => route.isFirst);
   }
 }
