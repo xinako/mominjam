@@ -2,7 +2,26 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/moeminjam/mominjam/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/moeminjam/mominjam/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/moeminjam/mominjam/build" />
+      <excludeFolder url="file://$MODULE_DIR$/taptap/build" />
+      <excludeFolder url="file://$MODULE_DIR$/taptap/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/taptap/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/papb-pratikum-master/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/papb-pratikum-master/build" />
+      <excludeFolder url="file://$MODULE_DIR$/papb-pratikum-master/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/digital-banking-app-mobile-side-main/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/digital-banking-app-mobile-side-main/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/digital-banking-app-mobile-side-main/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application_1/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application_1/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application_1/build" />
+      <excludeFolder url="file://$MODULE_DIR$/oxymon_laon_app-main/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/oxymon_laon_app-main/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/oxymon_laon_app-main/build" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

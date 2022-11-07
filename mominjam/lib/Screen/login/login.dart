@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,13 +24,23 @@ class MySimpleLogin extends StatefulWidget {
 class _MySimpleLoginState extends State<MySimpleLogin> {
   var email = "";
   var password = "";
+  final emailcontroller = TextEditingController();
+  final passwordcontroller = TextEditingController();
+
+  @override
+  void dispose() {
+    emailcontroller.dispose();
+    passwordcontroller.dispose();
+
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
+    // SystemChrome.setPreferredOrientations([
+    //   DeviceOrientation.portraitUp,
+    //   DeviceOrientation.portraitDown,
+    // ]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -73,6 +85,7 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
                       left: 20, right: 20, top: 1, bottom: 1),
                   width: double.infinity,
                   child: TextFormField(
+                    controller: emailcontroller,
                     decoration: const InputDecoration(
                       labelText: "Email",
                       prefixIcon: Icon(Icons.email),
@@ -89,6 +102,7 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
                   ),
                   width: double.infinity,
                   child: TextFormField(
+                    controller: passwordcontroller,
                     decoration: const InputDecoration(
                       labelText: "Password",
                       prefixIcon: Icon(Icons.password),
@@ -149,10 +163,11 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(snackBar);
                           } else {
-                            Navigator.of(context)
-                                .push(MaterialPageRoute(builder: (context) {
-                              return HomeScreen();
-                            }));
+                            login();
+                            // Navigator.of(context)
+                            //     .push(MaterialPageRoute(builder: (context) {
+                            //   return HomeScreen();
+                            // }));
                             // final message =
                             //     'Email: $email\nPassword: $password';
                             // final snackBar = SnackBar(
@@ -178,5 +193,11 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
         ),
       ),
     );
+  }
+
+  Future login() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailcontroller.text.trim(),
+        password: passwordcontroller.text.trim());
   }
 }

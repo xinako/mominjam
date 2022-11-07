@@ -4,11 +4,103 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77dba483-0088-4193-afe9-9cf2d24bc830" name="Changes" comment="" />
+    <list default="true" id="77dba483-0088-4193-afe9-9cf2d24bc830" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/taptap/lib/bambang.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/.metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/analysis_options.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/android/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/android/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/android/app/src/debug/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/android/app/src/main/kotlin/com/mominjam/mominjam/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/android/app/src/main/res/drawable-v21/launch_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/android/app/src/main/res/values-night/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/android/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/android/app/src/profile/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/android/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/android/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/android/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/assets/fonts/mo_me.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/assets/fonts/mo_re.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/assets/images/Money_bag.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/assets/images/call-center.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/assets/images/center.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/assets/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/assets/images/logoo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/assets/images/mominjam.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/assets/images/success.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/assets/images/top_header.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/assets/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Flutter/Debug.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Flutter/Release.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/AppDelegate.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Base.lproj/LaunchScreen.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Base.lproj/Main.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/ios/Runner/Runner-Bridging-Header.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/lib/Screen/home_screen/home_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/lib/Screen/home_screen/home_screen_loan.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/lib/Screen/login/login.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/lib/Screen/payment/dana.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/lib/Screen/payment/gopay.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/lib/Screen/payment/ovo.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/lib/Screen/payment/payment.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/lib/Screen/register/register.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/lib/Screen/succesful_page/successful_page.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/lib/Screen/terms/terms.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/lib/Screen/verification/verification.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/lib/main.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/lib/profile/profile.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/pubspec.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mominjam/pubspec.yaml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2EeJyCqtby5ndMQRRulJODtXKrN" />
   <component name="ProjectViewState">

@@ -1,4 +1,5 @@
 import 'package:custom_radio_grouped_button/custom_radio_grouped_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/material/colors.dart';
@@ -7,6 +8,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../succesful_page/successful_page.dart';
 import '../terms/terms.dart';
+import '../profile/profile.dart';
 
 void main() {
   return runApp(HomeScreen());
@@ -30,10 +32,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
+    // SystemChrome.setPreferredOrientations([
+    //   DeviceOrientation.portraitUp,
+    //   DeviceOrientation.portraitDown,
+    // ]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -49,8 +51,23 @@ class _HomeScreenState extends State<HomeScreen> {
           leading: new IconButton(
             icon: new Icon(Icons.exit_to_app,
                 color: Color.fromARGB(255, 255, 255, 255)),
-            onPressed: () => Navigator.of(context).pop(),
+            onPressed: () => FirebaseAuth.instance.signOut(),
           ),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.account_circle_outlined),
+              tooltip: 'Show Snackbar',
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return Profile();
+                }));
+              },
+            ),
+          ],
+          // actions: [
+          //   Icon(Icons.person),
+          // ],
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -205,6 +222,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Builder(
                       builder: (context) => ElevatedButton(
                         style: ElevatedButton.styleFrom(
+                          primary: Colors.blueGrey,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(14)),
                         ),

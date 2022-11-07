@@ -178,6 +178,7 @@ class _TermsState extends State<Terms> {
                     });
                   },
                 ),
+
                 Container(
                     height: 55,
                     width: double.infinity,
@@ -186,13 +187,14 @@ class _TermsState extends State<Terms> {
                     child: Builder(
                       builder: (context) => ElevatedButton(
                         style: ElevatedButton.styleFrom(
+                          // primary: Colors.grey,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(14)),
                         ),
                         onPressed: () {
                           FocusScope.of(context).unfocus();
                           // var tonet = 0;
-                          print(bool);
+                          // print(bool);
                           if (isChecked == true) {
                             Navigator.of(context)
                                 .push(MaterialPageRoute(builder: (context) {
