@@ -48,6 +48,12 @@ class _PaymentState extends State<Payment> {
         appBar: AppBar(
           title: const Text("Mo-Minjam"),
           centerTitle: true,
+          automaticallyImplyLeading: false,
+          leading: new IconButton(
+            icon: new Icon(Icons.arrow_back,
+                color: Color.fromARGB(255, 255, 255, 255)),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -274,34 +280,6 @@ class _PaymentState extends State<Payment> {
                         },
                         child: const Text(
                           "OVO",
-                          style: TextStyle(fontSize: 18),
-                        ),
-                      ),
-                    )),
-                Container(
-                    height: 55,
-                    width: 100,
-                    // width: double.infinity,
-                    // padding: const EdgeInsets.only(left: 20),
-                    margin: const EdgeInsets.only(right: 285, top: 20),
-                    child: Builder(
-                      builder: (context) => ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(14)),
-                        ),
-                        onPressed: () {
-                          FocusScope.of(context).unfocus();
-                          var tonet = 0;
-                          if (tonet == 0) {
-                            Navigator.of(context)
-                                .push(MaterialPageRoute(builder: (context) {
-                              return HomeScreenLoan();
-                            }));
-                          }
-                        },
-                        child: const Text(
-                          "Kembali",
                           style: TextStyle(fontSize: 18),
                         ),
                       ),

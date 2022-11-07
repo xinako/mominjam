@@ -43,6 +43,8 @@ dependencies:
   percent_indicator: ^2.1.9
   awesome_card: ^1.1.0
   im_stepper: ^0.1.2+10
+  firebase_auth: ^3.11.2
+  cloud_firestore: ^3.5.1
 
 dev_dependencies:
   flutter_test:
