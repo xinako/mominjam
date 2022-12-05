@@ -354,7 +354,7 @@ class _MyRegisterState extends State<MyRegister> {
     user.status = 'noloan';
     user.nominal = '0';
     user.tenor = '0';
-    user.loandate = '';
+    user.loandate = '01-01-0001';
     user.loanpaymentdate = '';
     user.kerjaan = '';
     user.telpkantor = '';
@@ -362,6 +362,16 @@ class _MyRegisterState extends State<MyRegister> {
     user.gaji = '';
     user.lamakerja = '';
     user.alamatkantor = '';
+    user.pendidikan = '';
+    user.married = '';
+    user.jumanak = '';
+    user.namaemak = '';
+    user.kondar1 = '';
+    user.kondartelp1 = '';
+    user.kondar2 = '';
+    user.kondartelp2 = '';
+    user.kondar3 = '';
+    user.kondartelp3 = '';
     user.datecreated = formatteddate;
     final json = user.toJson();
     await docuser.set(json);
@@ -388,6 +398,16 @@ class User {
   String gaji;
   String lamakerja;
   String alamatkantor;
+  String pendidikan;
+  String married;
+  String jumanak;
+  String namaemak;
+  String kondar1;
+  String kondartelp1;
+  String kondar2;
+  String kondartelp2;
+  String kondar3;
+  String kondartelp3;
 
   User({
     this.id = '',
@@ -409,6 +429,16 @@ class User {
     this.gaji = '',
     this.lamakerja = '',
     this.alamatkantor = '',
+    this.pendidikan = '',
+    this.married = '',
+    this.jumanak = '',
+    this.namaemak = '',
+    this.kondar1 = '',
+    this.kondartelp1 = '',
+    this.kondar2 = '',
+    this.kondartelp2 = '',
+    this.kondar3 = '',
+    this.kondartelp3 = '',
   });
   Map<String, dynamic> toJson() => {
         'id': id,
@@ -430,6 +460,16 @@ class User {
         'gaji': gaji,
         'lamakerja': lamakerja,
         'alamatkantor': alamatkantor,
+        'pendidikan': pendidikan,
+        'married': married,
+        'jumanak': jumanak,
+        'namaemak': namaemak,
+        'kondar1': kondar1,
+        'kondartelp1': kondartelp1,
+        'kondar2': kondar2,
+        'kondartelp2': kondartelp2,
+        'kondar3': kondar3,
+        'kondartelp3': kondartelp3,
       };
   static User fromJson(Map<String, dynamic> json) => User(
         id: json['id'],
@@ -451,5 +491,15 @@ class User {
         gaji: json['gaji'],
         lamakerja: json['lamakerja'],
         alamatkantor: json['alamatkantor'],
+        pendidikan: json['pendidikan'],
+        married: json['married'],
+        jumanak: json['jumanak'],
+        namaemak: json['namaemak'],
+        kondar1: json['kondar1'],
+        kondartelp1: json['kondartelp1'],
+        kondar2: json['kondar2'],
+        kondartelp2: json['kondartelp2'],
+        kondar3: json['kondar3'],
+        kondartelp3: json['kondartelp3'],
       );
 }
