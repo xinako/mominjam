@@ -76,15 +76,15 @@ class _LayananPelangganState extends State<LayananPelanggan> {
                               child: Text("Pinjaman"),
                               style: OutlinedButton.styleFrom(
                                   foregroundColor: Colors.black,
-                                minimumSize: Size(170, 50)
+                                minimumSize: Size(150, 50)
                               )
                           ),
                           OutlinedButton(
                               onPressed: (){},
-                              child: Text("Akun dan Keamanan"),
+                              child: Text("Keamanan Akun"),
                               style: OutlinedButton.styleFrom(
                                   foregroundColor: Colors.black,
-                                  minimumSize: Size(170, 50)
+                                  minimumSize: Size(150, 50)
                               )
                           ),
                         ],
@@ -102,10 +102,10 @@ class _LayananPelangganState extends State<LayananPelanggan> {
                       children: [
                         OutlinedButton(
                             onPressed: (){},
-                            child: Text("Operasional Lainnya"),
+                            child: Text("Opsi Lainnya"),
                             style: OutlinedButton.styleFrom(
                                 foregroundColor: Colors.black,
-                                minimumSize: Size(170, 50)
+                                minimumSize: Size(150, 50)
                             )
                         ),
                         OutlinedButton(
@@ -113,7 +113,7 @@ class _LayananPelangganState extends State<LayananPelanggan> {
                             child: Text("Ttd Elektronik"),
                             style: OutlinedButton.styleFrom(
                               foregroundColor: Colors.black,
-                                minimumSize: Size(170, 50)
+                                minimumSize: Size(150, 50)
                             )
                         ),
                       ],
