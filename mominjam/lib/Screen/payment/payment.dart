@@ -52,6 +52,12 @@ class _PaymentState extends State<Payment> {
           ),
           title: const Text("Mo-Minjam"),
           centerTitle: true,
+          automaticallyImplyLeading: false,
+          leading: new IconButton(
+            icon: new Icon(Icons.arrow_back,
+                color: Color.fromARGB(255, 255, 255, 255)),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
         ),
         body: Center(
           child: SingleChildScrollView(

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1062385489176",
+    "project_id": "mominjam-9cac4",
+    "storage_bucket": "mominjam-9cac4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1062385489176:android:6d9c77fdfe94bbb0fc3a6d",
+        "android_client_info": {
+          "package_name": "com.mominjam.mominjam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1062385489176-2lvl6t2n0afakgn25o4e4k62c38hn2m4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzLKsNNtDqeda4P6tJFXHqWzpWZgVLu7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1062385489176-2lvl6t2n0afakgn25o4e4k62c38hn2m4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
