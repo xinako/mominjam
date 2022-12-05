@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:mominjam/Screen/home_screen/home_screen.dart';
 import '../home_screen/home_screen_loan.dart';
 
 class successful_page extends StatefulWidget {
@@ -74,7 +73,7 @@ class _successful_pageState extends State<successful_page> {
                           if (tonet == 0) {
                             Navigator.of(context)
                                 .push(MaterialPageRoute(builder: (context) {
-                              return HomeScreen();
+                              return HomeScreenLoan();
                             }));
                           }
                         },

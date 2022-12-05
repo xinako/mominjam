@@ -7,9 +7,10 @@ import 'package:flutter/src/material/colors.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-// import '../succesful_page/successful_page.dart';
-import '../payment/payment.dart';
-import '../login/login.dart';
+import 'package:mominjam/Screen/payment/payment.dart';
+import '../succesful_page/successful_page.dart';
+import '../terms/terms.dart';
+import '../profile/profile.dart';
 
 void main() {
   return runApp(HomeScreenLoan());
@@ -63,17 +64,29 @@ class _HomeScreenLoanState extends State<HomeScreenLoan> {
       home: Scaffold(
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         appBar: AppBar(
-          // leading: IconButton(
-          //     icon: Icon(Icons.logout_rounded, color: Colors.white),
-          //     onPressed: () => {
-          //       Navigator.of(context)
-          //           .push(MaterialPageRoute(builder: (context) {
-          //         return MySimpleLogin();
-          //       }))
-          //     }
-          // ),
           title: const Text("Mo-Minjam"),
           centerTitle: true,
+          automaticallyImplyLeading: false,
+          leading: new IconButton(
+            icon: new Icon(Icons.exit_to_app,
+                color: Color.fromARGB(255, 255, 255, 255)),
+            onPressed: () => FirebaseAuth.instance.signOut(),
+          ),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.account_circle_outlined),
+              tooltip: 'Show Snackbar',
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return Profile();
+                }));
+              },
+            ),
+          ],
+          // actions: [
+          //   Icon(Icons.person),
+          // ],
         ),
         body: FutureBuilder<Usere?>(
           future: readUsers(),

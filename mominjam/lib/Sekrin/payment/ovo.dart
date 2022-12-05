@@ -4,14 +4,14 @@ import 'package:flutter/src/widgets/framework.dart';
 // import '../home_screen/home_screen_loan.dart';
 import 'payment.dart';
 
-class GoPay extends StatefulWidget {
-  const GoPay({Key? key}) : super(key: key);
+class OVO extends StatefulWidget {
+  const OVO({Key? key}) : super(key: key);
 
   @override
-  State<GoPay> createState() => _GoPayState();
+  State<OVO> createState() => _OVOState();
 }
 
-class _GoPayState extends State<GoPay> {
+class _OVOState extends State<OVO> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,14 +21,16 @@ class _GoPayState extends State<GoPay> {
         fontFamily: 'Domine',
       ),
       home: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back_rounded, color: Colors.white),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
-          title: const Text("Mo-Minjam"),
-          centerTitle: true,
-        ),
+        // appBar: AppBar(
+        //   title: const Text("Mo-Minjam"),
+        //   centerTitle: true,
+        //   automaticallyImplyLeading: false,
+        //   leading: new IconButton(
+        //     icon: new Icon(Icons.arrow_back,
+        //         color: Color.fromARGB(255, 255, 255, 255)),
+        //     onPressed: () => Navigator.of(context).pop(),
+        //   ),
+        // ),
         body: Center(
           child: SingleChildScrollView(
             child: Column(
@@ -41,8 +43,7 @@ class _GoPayState extends State<GoPay> {
                     horizontal: 70,
                   ),
                   child: const Text(
-                    "Tahapan Pembayaran Menggunakan GoPay : ",
-                    textAlign: TextAlign.center,
+                    "Tahapan Pembayaran Menggunakan OVO : ",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       // fontStyle: FontStyle.italic,
@@ -59,7 +60,7 @@ class _GoPayState extends State<GoPay> {
                     horizontal: 20,
                   ),
                   child: const Text(
-                    "1. Buka aplikasi GoPay dan masuk ke menu Send ",
+                    "1. Buka aplikasi OVO dan masuk ke menu Send ",
                     style: TextStyle(
                       // fontWeight: FontWeight.italic,
                       fontStyle: FontStyle.italic,

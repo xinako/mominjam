@@ -1,10 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/material/colors.dart';
 import 'package:flutter/gestures.dart';
-import '../../main.dart';
+import 'package:mominjam/main.dart';
 import '../register/register.dart';
 // import '../../main.dart';
 // import '../register/';
@@ -37,10 +38,10 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
-    ]);
+    // SystemChrome.setPreferredOrientations([
+    //   DeviceOrientation.portraitUp,
+    //   DeviceOrientation.portraitDown,
+    // ]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -81,8 +82,10 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(
-                      left: 20, right: 20, top: 1, bottom: 1),
+                  margin: const EdgeInsets.symmetric(
+                    vertical: 12,
+                    horizontal: 20,
+                  ),
                   width: double.infinity,
                   child: TextFormField(
                     controller: emailcontroller,
@@ -117,7 +120,7 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
                   width: double.infinity,
                   margin: const EdgeInsets.symmetric(
                     vertical: 1,
-                    horizontal: 95,
+                    horizontal: 115,
                   ),
                   child: RichText(
                     text: TextSpan(children: [
@@ -164,6 +167,10 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
                                 .showSnackBar(snackBar);
                           } else {
                             login();
+                            // Navigator.of(context)
+                            //     .push(MaterialPageRoute(builder: (context) {
+                            //   return HomeScreen();
+                            // }));
                             // final message =
                             //     'Email: $email\nPassword: $password';
                             // final snackBar = SnackBar(

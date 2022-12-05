@@ -21,14 +21,16 @@ class _GoPayState extends State<GoPay> {
         fontFamily: 'Domine',
       ),
       home: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back_rounded, color: Colors.white),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
-          title: const Text("Mo-Minjam"),
-          centerTitle: true,
-        ),
+        // appBar: AppBar(
+        //   title: const Text("Mo-Minjam"),
+        //   centerTitle: true,
+        //   automaticallyImplyLeading: false,
+        //   leading: new IconButton(
+        //     icon: new Icon(Icons.arrow_back,
+        //         color: Color.fromARGB(255, 255, 255, 255)),
+        //     onPressed: () => Navigator.of(context).pop(),
+        //   ),
+        // ),
         body: Center(
           child: SingleChildScrollView(
             child: Column(
@@ -42,7 +44,6 @@ class _GoPayState extends State<GoPay> {
                   ),
                   child: const Text(
                     "Tahapan Pembayaran Menggunakan GoPay : ",
-                    textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       // fontStyle: FontStyle.italic,

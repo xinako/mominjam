@@ -354,14 +354,8 @@ class _MyRegisterState extends State<MyRegister> {
     user.status = 'noloan';
     user.nominal = '0';
     user.tenor = '0';
-    user.loandate = '';
-    user.loanpaymentdate = '';
-    user.kerjaan = '';
-    user.telpkantor = '';
-    user.tglgajian = '';
-    user.gaji = '';
-    user.lamakerja = '';
-    user.alamatkantor = '';
+    user.loandate = 'NULL';
+    user.loanpaymentdate = 'NULL';
     user.datecreated = formatteddate;
     final json = user.toJson();
     await docuser.set(json);
@@ -382,34 +376,20 @@ class User {
   String tenor;
   String datecreated;
   String loanpaymentdate;
-  String kerjaan;
-  String telpkantor;
-  String tglgajian;
-  String gaji;
-  String lamakerja;
-  String alamatkantor;
-
-  User({
-    this.id = '',
-    required this.name,
-    required this.nik,
-    required this.telp,
-    required this.bank,
-    required this.norek,
-    required this.email,
-    this.status = '',
-    this.nominal = '',
-    this.loandate = '',
-    this.tenor = '',
-    this.datecreated = '',
-    this.loanpaymentdate = '',
-    this.kerjaan = '',
-    this.telpkantor = '',
-    this.tglgajian = '',
-    this.gaji = '',
-    this.lamakerja = '',
-    this.alamatkantor = '',
-  });
+  User(
+      {this.id = '',
+      required this.name,
+      required this.nik,
+      required this.telp,
+      required this.bank,
+      required this.norek,
+      required this.email,
+      this.status = '',
+      this.nominal = '',
+      this.loandate = '',
+      this.tenor = '',
+      this.datecreated = '',
+      this.loanpaymentdate = ''});
   Map<String, dynamic> toJson() => {
         'id': id,
         'nama': name,
@@ -423,33 +403,20 @@ class User {
         'loandate': loandate,
         'tenor': tenor,
         'datecreated': datecreated,
-        'loanpaymentdate': loanpaymentdate,
-        'kerjaan': kerjaan,
-        'telpkantor': telpkantor,
-        'tglgajian': tglgajian,
-        'gaji': gaji,
-        'lamakerja': lamakerja,
-        'alamatkantor': alamatkantor,
+        'loanpaymentdate': loanpaymentdate
       };
   static User fromJson(Map<String, dynamic> json) => User(
-        id: json['id'],
-        name: json['nama'],
-        nik: json['nik'],
-        telp: json['telp'],
-        bank: json['bank'],
-        norek: json['norek'],
-        email: json['email'],
-        status: json['status'],
-        nominal: json['nominal'],
-        loandate: json['loandate'],
-        tenor: json['tenor'],
-        datecreated: json['datecreated'],
-        loanpaymentdate: json['loanpaymentdate'],
-        kerjaan: json['kerjaan'],
-        telpkantor: json['telpkantor'],
-        tglgajian: json['tglgajian'],
-        gaji: json['gaji'],
-        lamakerja: json['lamakerja'],
-        alamatkantor: json['alamatkantor'],
-      );
+      id: json['id'],
+      name: json['nama'],
+      nik: json['nik'],
+      telp: json['telp'],
+      bank: json['bank'],
+      norek: json['norek'],
+      email: json['email'],
+      status: json['status'],
+      nominal: json['nominal'],
+      loandate: json['loandate'],
+      tenor: json['tenor'],
+      datecreated: json['datecreated'],
+      loanpaymentdate: json['loanpaymentdate']);
 }

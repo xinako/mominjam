@@ -22,16 +22,14 @@ class _DanaState extends State<Dana> {
         fontFamily: 'Domine',
       ),
       home: Scaffold(
-        // appBar: AppBar(
-        //   title: const Text("Mo-Minjam"),
-        //   centerTitle: true,
-        //   automaticallyImplyLeading: false,
-        //   leading: new IconButton(
-        //     icon: new Icon(Icons.arrow_back,
-        //         color: Color.fromARGB(255, 255, 255, 255)),
-        //     onPressed: () => Navigator.of(context).pop(),
-        //   ),
-        // ),
+        appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_rounded, color: Colors.white),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
+          title: const Text("Mo-Minjam"),
+          centerTitle: true,
+        ),
         body: Center(
           child: SingleChildScrollView(
             child: Column(
@@ -45,6 +43,7 @@ class _DanaState extends State<Dana> {
                   ),
                   child: const Text(
                     "Tahap Pembayaran Menggunakan Dana : ",
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       // fontStyle: FontStyle.italic,

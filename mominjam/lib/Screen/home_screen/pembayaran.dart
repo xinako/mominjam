@@ -1,32 +1,33 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:custom_radio_grouped_button/custom_radio_grouped_button.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/material/colors.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 // import '../succesful_page/successful_page.dart';
 import '../payment/payment.dart';
 import '../login/login.dart';
 
 void main() {
-  return runApp(HomeScreenLoan());
+  return runApp(Pembayaran());
 }
 
-class HomeScreenLoan extends StatefulWidget {
-  const HomeScreenLoan({Key? key}) : super(key: key);
+class Pembayaran extends StatefulWidget {
+  const Pembayaran({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreenLoan> createState() => _HomeScreenLoanState();
+  State<Pembayaran> createState() => _PembayaranState();
 }
 
 // enum SingingCharacter { lafayette, jefferson }
 
-class _HomeScreenLoanState extends State<HomeScreenLoan> {
+class _PembayaranState extends State<Pembayaran> {
   int pinjaman = 0;
   int tenor = 0;
+  var tenn = 0;
   var userid = '';
   var nomi = '';
   var loandate = '';
@@ -42,6 +43,10 @@ class _HomeScreenLoanState extends State<HomeScreenLoan> {
   var totalday = 0;
   var simpanmonth = '';
   var lumping = true;
+  var tenno = '';
+  var total = 0;
+  var intnomi = 0;
+  var inttenno = 0;
   // SingingCharacter? _character = SingingCharacter.lafayette;
   // int totpinjam = pinjaman * 2;
   // int pinjam = 0;
@@ -63,15 +68,6 @@ class _HomeScreenLoanState extends State<HomeScreenLoan> {
       home: Scaffold(
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         appBar: AppBar(
-          // leading: IconButton(
-          //     icon: Icon(Icons.logout_rounded, color: Colors.white),
-          //     onPressed: () => {
-          //       Navigator.of(context)
-          //           .push(MaterialPageRoute(builder: (context) {
-          //         return MySimpleLogin();
-          //       }))
-          //     }
-          // ),
           title: const Text("Mo-Minjam"),
           centerTitle: true,
         ),
@@ -99,6 +95,18 @@ class _HomeScreenLoanState extends State<HomeScreenLoan> {
 
   Widget buildUser(Usere user) {
     nomi = user.nominal;
+    // tenno = user.tenor;
+    intnomi = int.parse(nomi);
+    // inttenno = int.parse(tenno);
+    // tenn = 0;
+    // print(intnomi);
+    // print(inttenno);
+
+    // var totall = (intnomi * tenn / 100) + intnomi;
+    // var totalint = total.toInt();
+    // nomi = int.parse(user.nominal);
+    // tenno = int.parse(user.tenor);
+    // nomi = (nomi * tenno / 100) + nomi;
     loandate = user.loandate;
     loandateday = loandate.substring(0, 2);
     loandatemonth = loandate.substring(3, 5);
@@ -113,6 +121,16 @@ class _HomeScreenLoanState extends State<HomeScreenLoan> {
     tonet = user.tenor;
     inttonet = int.parse(tonet);
     totalday = intloandateday + inttonet;
+    if (inttonet == 30) {
+      tenn = 12;
+    } else if (inttonet == 60) {
+      tenn = 24;
+    } else if (inttonet == 90) {
+      tenn = 36;
+    }
+    var totall = (intnomi * tenn / 100) + intnomi;
+    // var totalint = totall.toInt();
+    print(totall);
     while (lumping == true) {
       // bulan 1 3 5 7 8 10 12
       if (intloandatemonth == 1 ||
@@ -236,7 +254,7 @@ class _HomeScreenLoanState extends State<HomeScreenLoan> {
                 // margin: const EdgeInsets.only(
                 //     left: 20, right: 20, top: 1, bottom: 1),
                 child: Text(
-                  "Rp.$nomi,00",
+                  "Rp.$totall,00",
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 25,
