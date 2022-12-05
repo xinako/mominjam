@@ -22,6 +22,10 @@ class _OVOState extends State<OVO> {
       ),
       home: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_rounded, color: Colors.white),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
           title: const Text("Mo-Minjam"),
           centerTitle: true,
           automaticallyImplyLeading: false,
@@ -44,6 +48,7 @@ class _OVOState extends State<OVO> {
                   ),
                   child: const Text(
                     "Tahapan Pembayaran Menggunakan OVO : ",
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       // fontStyle: FontStyle.italic,

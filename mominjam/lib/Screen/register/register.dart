@@ -49,7 +49,7 @@ class _MyRegisterState extends State<MyRegister> {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Register Mo-Minjam"),
+          title: const Text("Mo-Minjam"),
           centerTitle: true,
         ),
         body: Center(
@@ -63,6 +63,21 @@ class _MyRegisterState extends State<MyRegister> {
                     'assets/images/logo.png',
                     width: 250,
                     height: 250,
+                  ),
+                ),
+                Container(
+                  // width: double.infinity,
+                  margin: const EdgeInsets.symmetric(
+                    vertical: 20,
+                    horizontal: 140,
+                  ),
+                  child: const Text(
+                    "Register",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                      fontFamily: 'Headline',
+                    ),
                   ),
                 ),
                 Container(

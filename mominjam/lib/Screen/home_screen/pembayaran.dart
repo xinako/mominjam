@@ -10,19 +10,19 @@ import '../payment/payment.dart';
 import '../login/login.dart';
 
 void main() {
-  return runApp(HomeScreenLoan());
+  return runApp(Pembayaran());
 }
 
-class HomeScreenLoan extends StatefulWidget {
-  const HomeScreenLoan({Key? key}) : super(key: key);
+class Pembayaran extends StatefulWidget {
+  const Pembayaran({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreenLoan> createState() => _HomeScreenLoanState();
+  State<Pembayaran> createState() => _PembayaranState();
 }
 
 // enum SingingCharacter { lafayette, jefferson }
 
-class _HomeScreenLoanState extends State<HomeScreenLoan> {
+class _PembayaranState extends State<Pembayaran> {
   int pinjaman = 0;
   int tenor = 0;
   // SingingCharacter? _character = SingingCharacter.lafayette;
@@ -31,10 +31,10 @@ class _HomeScreenLoanState extends State<HomeScreenLoan> {
 
   @override
   Widget build(BuildContext context) {
-    // SystemChrome.setPreferredOrientations([
-    //   DeviceOrientation.portraitUp,
-    //   DeviceOrientation.portraitDown,
-    // ]);
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -44,27 +44,8 @@ class _HomeScreenLoanState extends State<HomeScreenLoan> {
       home: Scaffold(
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         appBar: AppBar(
-          leading: IconButton(
-              icon: Icon(Icons.logout_rounded, color: Colors.white),
-              onPressed: () => {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) {
-                  return MySimpleLogin();
-                }))
-              }
-          ),
           title: const Text("Mo-Minjam"),
           centerTitle: true,
-          automaticallyImplyLeading: false,
-          leading: new IconButton(
-            icon: new Icon(Icons.exit_to_app,
-                color: Color.fromARGB(255, 255, 255, 255)),
-            onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                return MySimpleLogin();
-              }));
-            },
-          ),
         ),
         body: Center(
           child: SingleChildScrollView(

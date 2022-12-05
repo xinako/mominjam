@@ -21,15 +21,13 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-// enum SingingCharacter { lafayette, jefferson }
-
 class _HomeScreenState extends State<HomeScreen> {
-  int pinjaman = 0;
-  int tenor = 0;
-  // SingingCharacter? _character = SingingCharacter.lafayette;
-  // int totpinjam = pinjaman * 2;
-  // int pinjam = 0;
-
+  int pageIndex = 0;
+  List<Widget> pageList = <Widget>[
+    Pinjaman(),
+    Pembayaran(),
+    Profil()
+  ];
   @override
   Widget build(BuildContext context) {
     // final user = FirebaseAuth.instance.currentUser!;
@@ -312,7 +310,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-        ),
+        ],
+        unselectedItemColor: Colors.grey[400],
+        selectedItemColor: Colors.white,
+        backgroundColor: Colors.indigo,
       ),
     );
   }

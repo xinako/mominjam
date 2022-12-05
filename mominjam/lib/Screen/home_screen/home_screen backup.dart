@@ -6,25 +6,22 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../succesful_page/successful_page.dart';
-import '../home_screen/home_screen_loan.dart';
-import 'dana.dart';
-import 'ovo.dart';
-import 'gopay.dart';
+import '../login/login.dart';
 
-void main() {
-  return runApp(Payment());
-}
+//void main() {
+//  return runApp(HomeScreen());
+//}
 
-class Payment extends StatefulWidget {
-  const Payment({Key? key}) : super(key: key);
+class HomeScreenB extends StatefulWidget {
+  const HomeScreenB({Key? key}) : super(key: key);
 
   @override
-  State<Payment> createState() => _PaymentState();
+  State<HomeScreenB> createState() => _HomeScreenBState();
 }
 
 // enum SingingCharacter { lafayette, jefferson }
 
-class _PaymentState extends State<Payment> {
+class _HomeScreenBState extends State<HomeScreenB> {
   int pinjaman = 0;
   int tenor = 0;
   // SingingCharacter? _character = SingingCharacter.lafayette;
@@ -47,17 +44,16 @@ class _PaymentState extends State<Payment> {
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         appBar: AppBar(
           leading: IconButton(
-            icon: Icon(Icons.arrow_back_rounded, color: Colors.white),
-            onPressed: () => Navigator.of(context).pop(),
+            icon: Icon(Icons.logout_rounded, color: Colors.white),
+            onPressed: () => {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) {
+            return MySimpleLogin();
+            }))
+          }
           ),
           title: const Text("Mo-Minjam"),
           centerTitle: true,
-          automaticallyImplyLeading: false,
-          leading: new IconButton(
-            icon: new Icon(Icons.arrow_back,
-                color: Color.fromARGB(255, 255, 255, 255)),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -104,7 +100,7 @@ class _PaymentState extends State<Payment> {
                   // width: double.infinity,
                   // margin: EdgeInsets.only(bottom: 1, left: 50, top: 150),
                   child: const Text(
-                    "Transfer ke Rekening :",
+                    "Limit Pinjaman Anda :",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 25,
@@ -122,7 +118,7 @@ class _PaymentState extends State<Payment> {
                   // margin: const EdgeInsets.only(
                   //     left: 20, right: 20, top: 1, bottom: 1),
                   child: const Text(
-                    "BNI - 1193851703847",
+                    "Rp. 1.500.000,00",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 25,
@@ -131,79 +127,79 @@ class _PaymentState extends State<Payment> {
                     ),
                   ),
                 ),
-                // CustomRadioButton(
-                //   elevation: 0,
-                //   // absoluteZeroSpacing: true,
+                CustomRadioButton(
+                  elevation: 0,
+                  // absoluteZeroSpacing: true,
+                  unSelectedColor: Theme.of(context).canvasColor,
+                  buttonLables: [
+                    '30 Hari',
+                    '60 Hari',
+                    '90 Hari',
+                  ],
+                  buttonValues: [
+                    "12",
+                    "24",
+                    "36",
+                  ],
+                  buttonTextStyle: ButtonTextStyle(
+                      selectedColor: Colors.white,
+                      unSelectedColor: Colors.black,
+                      textStyle: TextStyle(fontSize: 16)),
+                  radioButtonValue: (value) {
+                    print("Nilai Value $value");
+                    tenor = int.parse("$value");
+                    print("Nilai Tenor $tenor");
+                  },
+                  selectedColor: Theme.of(context).accentColor,
+                ),
 
-                //   unSelectedColor: Theme.of(context).canvasColor,
-                //   buttonLables: [
-                //     'Dana',
-                //     'ShopeePay',
-                //     'GoPay',
-                //   ],
-                //   buttonValues: [
-                //     "12",
-                //     "24",
-                //     "36",
-                //   ],
-                //   buttonTextStyle: ButtonTextStyle(
-                //       selectedColor: Colors.white,
-                //       unSelectedColor: Colors.black,
-                //       textStyle: TextStyle(fontSize: 16)),
-                //   radioButtonValue: (value) {
-                //     print("Nilai Value $value");
-                //     tenor = int.parse("$value");
-                //     print("Nilai Tenor $tenor");
-                //   },
-                //   selectedColor: Theme.of(context).accentColor,
-                // ),
-                // Container(
-                //   // width: double.infinity,
-                //   margin: const EdgeInsets.symmetric(
-                //     vertical: 15,
-                //     horizontal: 120,
-                //   ),
-                //   child: const Text(
-                //     "Minimum Peminjaman :",
-                //     style: TextStyle(
-                //       fontWeight: FontWeight.bold,
-                //       fontSize: 15,
-                //       fontFamily: 'Headline',
-                //     ),
-                //   ),
-                // ),
-                // Container(
-                //   // width: double.infinity,
-                //   margin: const EdgeInsets.symmetric(
-                //     vertical: 15,
-                //     horizontal: 150,
-                //   ),
-                //   child: const Text(
-                //     "Rp. 400.000,00",
-                //     style: TextStyle(
-                //       fontWeight: FontWeight.bold,
-                //       fontSize: 15,
-                //       fontFamily: 'Headline',
-                //     ),
-                //   ),
-                // ),
-                // Container(
-                //   margin: const EdgeInsets.only(
-                //       left: 20, right: 20, top: 1, bottom: 1),
-                //   // width: double.infinity,
-                //   child: TextFormField(
-                //     decoration: const InputDecoration(
-                //       labelText: "Nominal",
-                //       // prefixIcon: Icon(Icons.pinjaman),
-                //       border: OutlineInputBorder(),
-                //     ),
-                //     onChanged: (value) => pinjaman = int.parse(value),
-                //     keyboardType: TextInputType.number,
-                //   ),
-                // ),
+                Container(
+                  // width: double.infinity,
+                  margin: const EdgeInsets.symmetric(
+                    vertical: 1,
+                    horizontal: 120,
+                  ),
+                  child: const Text(
+                    "Minimum Peminjaman :",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      fontFamily: 'Headline',
+                    ),
+                  ),
+                ),
+                Container(
+                  // width: double.infinity,
+                  margin: const EdgeInsets.symmetric(
+                    vertical: 15,
+                    horizontal: 150,
+                  ),
+                  child: const Text(
+                    "Rp. 400.000,00",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      fontFamily: 'Headline',
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.only(
+                      left: 20, right: 20, top: 1, bottom: 1),
+                  // width: double.infinity,
+                  child: TextFormField(
+                    decoration: const InputDecoration(
+                      labelText: "Nominal",
+                      // prefixIcon: Icon(Icons.pinjaman),
+                      border: OutlineInputBorder(),
+                    ),
+                    onChanged: (value) => pinjaman = int.parse(value),
+                    keyboardType: TextInputType.number,
+                  ),
+                ),
                 Container(
                     height: 55,
-                    width: double.infinity,
+                    // width: double.infinity,
                     margin: const EdgeInsets.symmetric(
                       horizontal: 14,
                       vertical: 28,
@@ -216,20 +212,44 @@ class _PaymentState extends State<Payment> {
                         ),
                         onPressed: () {
                           FocusScope.of(context).unfocus();
-                          var tonet = 0;
-                          if (tonet == 0) {
-                            Navigator.of(context)
-                                .push(MaterialPageRoute(builder: (context) {
-                              return Dana();
-                            }));
+                          if (pinjaman < 400000 ||
+                              pinjaman == 0 ||
+                              tenor == 0 ||
+                              pinjaman > 1500000) {
+                            const message = 'Masukkan Data Dengan Benar!';
+                            const snackBar = SnackBar(
+                              content: Text(
+                                message,
+                                style: TextStyle(fontSize: 20),
+                              ),
+                              backgroundColor: Colors.red,
+                            );
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(snackBar);
+                          } else {
+                            print("Tenor $tenor");
+                            var total = (pinjaman * tenor / 100) + pinjaman;
+                            var totalint = total.toInt();
+                            final message =
+                                'Total Pembayaran :  Rp.$totalint,00';
+                            final snackBar = SnackBar(
+                              content: Text(
+                                message,
+                                style: const TextStyle(fontSize: 20),
+                              ),
+                              backgroundColor: Colors.green,
+                            );
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(snackBar);
                           }
                         },
                         child: const Text(
-                          "Dana",
+                          "Cek Total Pembayaran",
                           style: TextStyle(fontSize: 18),
                         ),
                       ),
                     )),
+
                 Container(
                     height: 55,
                     width: double.infinity,
@@ -245,45 +265,29 @@ class _PaymentState extends State<Payment> {
                         ),
                         onPressed: () {
                           FocusScope.of(context).unfocus();
-                          var tonet = 0;
-                          if (tonet == 0) {
+                          if (pinjaman < 400000 ||
+                              pinjaman == 0 ||
+                              tenor == 0 ||
+                              pinjaman > 1500000) {
+                            const message = 'Masukkan Data Dengan Benar!';
+                            const snackBar = SnackBar(
+                              content: Text(
+                                message,
+                                style: TextStyle(fontSize: 20),
+                              ),
+                              backgroundColor: Colors.red,
+                            );
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(snackBar);
+                          } else {
                             Navigator.of(context)
                                 .push(MaterialPageRoute(builder: (context) {
-                              return GoPay();
+                              return successful_page();
                             }));
                           }
                         },
                         child: const Text(
-                          "Gopay",
-                          style: TextStyle(fontSize: 18),
-                        ),
-                      ),
-                    )),
-                Container(
-                    height: 55,
-                    width: double.infinity,
-                    margin: const EdgeInsets.symmetric(
-                      horizontal: 14,
-                      vertical: 28,
-                    ),
-                    child: Builder(
-                      builder: (context) => ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(14)),
-                        ),
-                        onPressed: () {
-                          FocusScope.of(context).unfocus();
-                          var tonet = 0;
-                          if (tonet == 0) {
-                            Navigator.of(context)
-                                .push(MaterialPageRoute(builder: (context) {
-                              return OVO();
-                            }));
-                          }
-                        },
-                        child: const Text(
-                          "OVO",
+                          "AJUKAN SEKARANG",
                           style: TextStyle(fontSize: 18),
                         ),
                       ),

@@ -23,6 +23,10 @@ class _DanaState extends State<Dana> {
       ),
       home: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_rounded, color: Colors.white),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
           title: const Text("Mo-Minjam"),
           centerTitle: true,
           automaticallyImplyLeading: false,
@@ -45,6 +49,7 @@ class _DanaState extends State<Dana> {
                   ),
                   child: const Text(
                     "Tahap Pembayaran Menggunakan Dana : ",
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       // fontStyle: FontStyle.italic,
