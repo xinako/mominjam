@@ -82,8 +82,10 @@ class _MySimpleLoginState extends State<MySimpleLogin> {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.only(
-                      left: 20, right: 20, top: 1, bottom: 1),
+                  margin: const EdgeInsets.symmetric(
+                    vertical: 12,
+                    horizontal: 20,
+                  ),
                   width: double.infinity,
                   child: TextFormField(
                     controller: emailcontroller,

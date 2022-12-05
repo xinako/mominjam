@@ -36,7 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_svg: ^1.1.5
-  flutter_launcher_icons: ^0.10.0
+  flutter_launcher_icons: ^0.11.0
   firebase_core: ^1.22.0
   custom_radio_grouped_button: any
   smooth_star_rating: ^1.1.1
@@ -45,6 +45,7 @@ dependencies:
   im_stepper: ^0.1.2+10
   firebase_auth: ^3.11.2
   cloud_firestore: ^3.5.1
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:

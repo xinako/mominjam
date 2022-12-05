@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:custom_radio_grouped_button/custom_radio_grouped_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -26,17 +27,19 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int pinjaman = 0;
   int tenor = 0;
+  var userid = '';
   // SingingCharacter? _character = SingingCharacter.lafayette;
   // int totpinjam = pinjaman * 2;
   // int pinjam = 0;
 
   @override
   Widget build(BuildContext context) {
-    // final user = FirebaseAuth.instance.currentUser!;
-    // SystemChrome.setPreferredOrientations([
-    //   DeviceOrientation.portraitUp,
-    //   DeviceOrientation.portraitDown,
-    // ]);
+    final user = FirebaseAuth.instance.currentUser!;
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    userid = user.uid;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -133,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   // margin: const EdgeInsets.only(
                   //     left: 20, right: 20, top: 1, bottom: 1),
                   child: const Text(
-                    "Rp. 1.500.000,00",
+                    "Rp. 15.000.000,00",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 25,
@@ -146,17 +149,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   elevation: 0,
                   // absoluteZeroSpacing: true,
                   unSelectedColor: Theme.of(context).canvasColor,
-                  buttonLables: [
+                  buttonLables: const [
                     '30 Hari',
                     '60 Hari',
                     '90 Hari',
                   ],
-                  buttonValues: [
+                  buttonValues: const [
                     "12",
                     "24",
                     "36",
                   ],
-                  buttonTextStyle: ButtonTextStyle(
+                  buttonTextStyle: const ButtonTextStyle(
                       selectedColor: Colors.white,
                       unSelectedColor: Colors.black,
                       textStyle: TextStyle(fontSize: 16)),
@@ -165,14 +168,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     tenor = int.parse("$value");
                     print("Nilai Tenor $tenor");
                   },
-                  selectedColor: Theme.of(context).accentColor,
+                  selectedColor: Theme.of(context).colorScheme.secondary,
                 ),
 
                 Container(
                   // width: double.infinity,
                   margin: const EdgeInsets.symmetric(
                     vertical: 1,
-                    horizontal: 120,
+                    horizontal: 70,
                   ),
                   child: const Text(
                     "Minimum Peminjaman :",
@@ -186,8 +189,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 Container(
                   // width: double.infinity,
                   margin: const EdgeInsets.symmetric(
-                    vertical: 15,
-                    horizontal: 150,
+                    vertical: 10,
+                    horizontal: 100,
                   ),
                   child: const Text(
                     "Rp. 400.000,00",
@@ -232,7 +235,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           if (pinjaman < 400000 ||
                               pinjaman == 0 ||
                               tenor == 0 ||
-                              pinjaman > 1500000) {
+                              pinjaman > 15000000) {
                             const message = 'Masukkan Data Dengan Benar!';
                             const snackBar = SnackBar(
                               content: Text(
@@ -285,7 +288,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           if (pinjaman < 400000 ||
                               pinjaman == 0 ||
                               tenor == 0 ||
-                              pinjaman > 1500000) {
+                              pinjaman > 15000000) {
                             const message = 'Masukkan Data Dengan Benar!';
                             const snackBar = SnackBar(
                               content: Text(
@@ -297,6 +300,19 @@ class _HomeScreenState extends State<HomeScreen> {
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(snackBar);
                           } else {
+                            if (tenor == 12) {
+                              tenor = 30;
+                            } else if (tenor == 24) {
+                              tenor = 60;
+                            } else if (tenor == 36) {
+                              tenor = 90;
+                            }
+                            print(tenor);
+                            final docUser = FirebaseFirestore.instance
+                                .collection('users')
+                                .doc(userid);
+                            docUser.update(
+                                {'nominal': '$pinjaman', 'tenor': "$tenor"});
                             Navigator.of(context)
                                 .push(MaterialPageRoute(builder: (context) {
                               return Terms();

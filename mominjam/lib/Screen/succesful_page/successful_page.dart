@@ -39,12 +39,12 @@ class _successful_pageState extends State<successful_page> {
                 ),
                 Container(
                   // width: double.infinity,
-                  // margin: const EdgeInsets.symmetric(
-                  //   vertical: 1,
-                  //   horizontal: 20,
-                  // ),
+                  margin: const EdgeInsets.symmetric(
+                    vertical: 1,
+                    horizontal: 20,
+                  ),
                   child: const Text(
-                    "Peminjaman berhasil dan akan segera diproses",
+                    "Peminjaman berhasil!",
                     style: TextStyle(
                       // fontWeight: FontWeight.italic,
                       fontStyle: FontStyle.italic,

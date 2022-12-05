@@ -45,16 +45,16 @@ class _PaymentState extends State<Payment> {
       ),
       home: Scaffold(
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
-        appBar: AppBar(
-          title: const Text("Mo-Minjam"),
-          centerTitle: true,
-          automaticallyImplyLeading: false,
-          leading: new IconButton(
-            icon: new Icon(Icons.arrow_back,
-                color: Color.fromARGB(255, 255, 255, 255)),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
-        ),
+        // appBar: AppBar(
+        //   title: const Text("Mo-Minjam"),
+        //   centerTitle: true,
+        //   automaticallyImplyLeading: false,
+        //   leading: new IconButton(
+        //     icon: new Icon(Icons.arrow_back,
+        //         color: Color.fromARGB(255, 255, 255, 255)),
+        //     onPressed: () => Navigator.of(context).pop(),
+        //   ),
+        // ),
         body: Center(
           child: SingleChildScrollView(
             child: Column(
@@ -118,7 +118,7 @@ class _PaymentState extends State<Payment> {
                   // margin: const EdgeInsets.only(
                   //     left: 20, right: 20, top: 1, bottom: 1),
                   child: const Text(
-                    "BNI - 1193851703847",
+                    "BNI - 1353475927",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 25,
@@ -284,6 +284,33 @@ class _PaymentState extends State<Payment> {
                         ),
                       ),
                     )),
+                // Container(
+                //     height: 55,
+                //     // width: double.infinity,
+                //     margin: const EdgeInsets.symmetric(
+                //       horizontal: 14,
+                //       vertical: 28,
+                //     ),
+                //     child: Builder(
+                //       builder: (context) => ElevatedButton(
+                //         style: ElevatedButton.styleFrom(
+                //           shape: RoundedRectangleBorder(
+                //               borderRadius: BorderRadius.circular(14)),
+                //         ),
+                //         onPressed: () {
+                //           FocusScope.of(context).unfocus();
+
+                //           Navigator.of(context)
+                //               .push(MaterialPageRoute(builder: (context) {
+                //             return Payment();
+                //           }));
+                //         },
+                //         child: const Text(
+                //           "Kembali",
+                //           style: TextStyle(fontSize: 18),
+                //         ),
+                //       ),
+                //     )),
               ],
             ),
           ),

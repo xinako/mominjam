@@ -1,6 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:intl/intl.dart';
 import 'package:mominjam/Screen/payment/payment.dart';
 import '../home_screen/home_screen.dart';
 // import '../home_screen/home_screen_loan.dart';
@@ -16,8 +20,20 @@ class Terms extends StatefulWidget {
 
 class _TermsState extends State<Terms> {
   bool isChecked = false;
+  var userid = '';
+  var formatteddate = '';
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    userid = user.uid;
+    var now = DateTime.now();
+    var formatter = DateFormat('dd-MM-yyyy');
+    formatteddate = formatter.format(now);
+    print(formatteddate);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -196,6 +212,13 @@ class _TermsState extends State<Terms> {
                           // var tonet = 0;
                           // print(bool);
                           if (isChecked == true) {
+                            final docUser = FirebaseFirestore.instance
+                                .collection('users')
+                                .doc(userid);
+                            docUser.update({
+                              'status': 'loan',
+                              'loandate': formatteddate,
+                            });
                             Navigator.of(context)
                                 .push(MaterialPageRoute(builder: (context) {
                               return successful_page();
