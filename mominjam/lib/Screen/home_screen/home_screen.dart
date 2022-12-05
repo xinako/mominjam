@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mominjam/Screen/home_screen/pembayaran.dart';
 import 'package:mominjam/Screen/home_screen/pinjaman.dart';
 import 'package:mominjam/Screen/home_screen/profil.dart';
 
@@ -13,6 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int pageIndex = 0;
   List<Widget> pageList = <Widget>[
     Pinjaman(),
+    Pembayaran(),
     Profil()
   ];
   @override
@@ -31,6 +33,10 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.monetization_on_outlined),
             label: 'Pinjaman',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.description_rounded),
+            label: 'Pembayaran',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle_outlined),

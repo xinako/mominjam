@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:mominjam/Screen/home_screen/home_screen%20backup.dart';
+import 'package:mominjam/Screen/home_screen/pembayaran.dart';
+import '../home_screen/home_screen.dart';
 import '../home_screen/home_screen_loan.dart';
 
 class successful_page extends StatefulWidget {
@@ -11,6 +14,7 @@ class successful_page extends StatefulWidget {
 }
 
 class _successful_pageState extends State<successful_page> {
+  int pageIndex = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -73,7 +77,7 @@ class _successful_pageState extends State<successful_page> {
                           if (tonet == 0) {
                             Navigator.of(context)
                                 .push(MaterialPageRoute(builder: (context) {
-                              return HomeScreenLoan();
+                              return HomeScreen();
                             }));
                           }
                         },

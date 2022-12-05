@@ -12,16 +12,16 @@ import '../login/login.dart';
 //  return runApp(HomeScreen());
 //}
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class HomeScreenB extends StatefulWidget {
+  const HomeScreenB({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HomeScreenB> createState() => _HomeScreenBState();
 }
 
 // enum SingingCharacter { lafayette, jefferson }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenBState extends State<HomeScreenB> {
   int pinjaman = 0;
   int tenor = 0;
   // SingingCharacter? _character = SingingCharacter.lafayette;
